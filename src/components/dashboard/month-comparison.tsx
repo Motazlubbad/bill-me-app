@@ -27,28 +27,29 @@ export function MonthComparison({
       <CardContent>
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">{formatMonth(currentMonth)}</span>
-            <span className="font-bold">{formatCurrency(currentMonthTotal, currency)}</span>
+            <span className="text-sm" style={{ color: "#757575" }}>{formatMonth(currentMonth)}</span>
+            <span style={{ fontWeight: 700, color: "#1e1e1e" }}>{formatCurrency(currentMonthTotal, currency)}</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">{formatMonth(previousMonth)}</span>
-            <span className="font-bold">{formatCurrency(previousMonthTotal, currency)}</span>
+            <span className="text-sm" style={{ color: "#757575" }}>{formatMonth(previousMonth)}</span>
+            <span style={{ fontWeight: 700, color: "#1e1e1e" }}>{formatCurrency(previousMonthTotal, currency)}</span>
           </div>
           <div className="border-t pt-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium">Difference</span>
+              <span className="text-sm font-medium" style={{ color: "#1e1e1e" }}>Difference</span>
               <div className="flex items-center gap-1">
                 {diff > 0 ? (
-                  <ArrowUp className="h-4 w-4 text-red-500" />
+                  <ArrowUp className="h-4 w-4" style={{ color: "#900b09" }} />
                 ) : diff < 0 ? (
-                  <ArrowDown className="h-4 w-4 text-green-500" />
+                  <ArrowDown className="h-4 w-4" style={{ color: "#02542d" }} />
                 ) : (
-                  <Minus className="h-4 w-4 text-muted-foreground" />
+                  <Minus className="h-4 w-4" style={{ color: "#757575" }} />
                 )}
                 <span
-                  className={`font-bold ${
-                    diff > 0 ? "text-red-500" : diff < 0 ? "text-green-500" : ""
-                  }`}
+                  style={{
+                    fontWeight: 700,
+                    color: diff > 0 ? "#900b09" : diff < 0 ? "#02542d" : "#1e1e1e",
+                  }}
                 >
                   {formatCurrency(Math.abs(diff), currency)}
                 </span>

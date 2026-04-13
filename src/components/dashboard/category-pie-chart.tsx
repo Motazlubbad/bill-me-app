@@ -10,7 +10,7 @@ import {
   Legend,
 } from "recharts";
 
-const COLORS = ["#f59e0b", "#3b82f6", "#8b5cf6", "#ec4899", "#10b981", "#6366f1", "#6b7280"];
+const COLORS = ["#2c2c2c", "#757575", "#14ae5c", "#e8b931", "#ec221f", "#b3b3b3", "#d9d9d9"];
 
 interface CategoryPieChartProps {
   data: { category: string; total: number }[];
@@ -67,9 +67,10 @@ export function CategoryPieChart({ data, currency = "TRY" }: CategoryPieChartPro
                   }).format(Number(value))
                 }
                 contentStyle={{
-                  backgroundColor: "hsl(var(--card))",
-                  border: "1px solid hsl(var(--border))",
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #d9d9d9",
                   borderRadius: "8px",
+                  boxShadow: "0 1px 4px rgba(12,12,13,0.05)",
                 }}
               />
               <Legend />

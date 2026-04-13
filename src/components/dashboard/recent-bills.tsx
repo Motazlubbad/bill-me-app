@@ -40,11 +40,22 @@ export function RecentBills({ bills }: RecentBillsProps) {
               <Link
                 key={bill.id}
                 href={`/bills/${bill.id}`}
-                className="flex items-center justify-between rounded-lg border p-3 hover:bg-muted/50 transition-colors"
+                className="flex items-center justify-between transition-colors"
+                style={{
+                  border: "1px solid #d9d9d9",
+                  borderRadius: 8,
+                  padding: 12,
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "#f5f5f5";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "";
+                }}
               >
                 <div>
-                  <p className="font-medium text-sm">{bill.title}</p>
-                  <p className="text-xs text-muted-foreground">
+                  <p style={{ fontSize: 14, fontWeight: 600, color: "#1e1e1e" }}>{bill.title}</p>
+                  <p style={{ fontSize: 14, color: "#757575" }}>
                     {bill.category} &middot; {bill.billingMonth}
                   </p>
                 </div>
@@ -52,7 +63,7 @@ export function RecentBills({ bills }: RecentBillsProps) {
                   <StatusBadge
                     status={overdue && bill.status === "pending" ? "overdue" : bill.status}
                   />
-                  <span className="font-semibold text-sm">
+                  <span style={{ fontSize: 14, fontWeight: 600, color: "#1e1e1e" }}>
                     {formatCurrency(bill.amount, bill.currency)}
                   </span>
                 </div>

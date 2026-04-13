@@ -32,15 +32,15 @@ export function MonthlyChart({ data, currency = "TRY" }: MonthlyChartProps) {
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#d9d9d9" />
               <XAxis
                 dataKey="label"
                 className="text-xs"
-                tick={{ fill: "hsl(var(--muted-foreground))" }}
+                tick={{ fill: "#757575" }}
               />
               <YAxis
                 className="text-xs"
-                tick={{ fill: "hsl(var(--muted-foreground))" }}
+                tick={{ fill: "#757575" }}
                 tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
               />
               <Tooltip
@@ -51,14 +51,15 @@ export function MonthlyChart({ data, currency = "TRY" }: MonthlyChartProps) {
                   }).format(Number(value))
                 }
                 contentStyle={{
-                  backgroundColor: "hsl(var(--card))",
-                  border: "1px solid hsl(var(--border))",
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #d9d9d9",
                   borderRadius: "8px",
+                  boxShadow: "0 1px 4px rgba(12,12,13,0.05)",
                 }}
               />
               <Bar
                 dataKey="total"
-                fill="hsl(var(--primary))"
+                fill="#2c2c2c"
                 radius={[4, 4, 0, 0]}
               />
             </BarChart>
