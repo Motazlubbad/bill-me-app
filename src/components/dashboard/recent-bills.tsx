@@ -14,7 +14,7 @@ interface RecentBillsProps {
 export function RecentBills({ bills }: RecentBillsProps) {
   if (bills.length === 0) {
     return (
-      <Card>
+      <Card className="border border-border">
         <CardHeader>
           <CardTitle>Recent Bills</CardTitle>
         </CardHeader>
@@ -28,7 +28,7 @@ export function RecentBills({ bills }: RecentBillsProps) {
   }
 
   return (
-    <Card>
+    <Card className="border border-border">
       <CardHeader>
         <CardTitle>Recent Bills</CardTitle>
       </CardHeader>
@@ -40,22 +40,11 @@ export function RecentBills({ bills }: RecentBillsProps) {
               <Link
                 key={bill.id}
                 href={`/bills/${bill.id}`}
-                className="flex items-center justify-between transition-colors"
-                style={{
-                  border: "1px solid #d9d9d9",
-                  borderRadius: 8,
-                  padding: 12,
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "#f5f5f5";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "";
-                }}
+                className="flex items-center justify-between rounded-lg border border-border p-3 transition-colors hover:bg-[#eff6ff] hover:border-[#bfdbfe]"
               >
                 <div>
-                  <p style={{ fontSize: 14, fontWeight: 600, color: "#1e1e1e" }}>{bill.title}</p>
-                  <p style={{ fontSize: 14, color: "#757575" }}>
+                  <p className="text-sm font-semibold text-foreground">{bill.title}</p>
+                  <p className="text-sm text-muted-foreground">
                     {bill.category} &middot; {bill.billingMonth}
                   </p>
                 </div>
@@ -63,7 +52,7 @@ export function RecentBills({ bills }: RecentBillsProps) {
                   <StatusBadge
                     status={overdue && bill.status === "pending" ? "overdue" : bill.status}
                   />
-                  <span style={{ fontSize: 14, fontWeight: 600, color: "#1e1e1e" }}>
+                  <span className="text-sm font-semibold text-foreground">
                     {formatCurrency(bill.amount, bill.currency)}
                   </span>
                 </div>

@@ -55,12 +55,11 @@ export default function RegisterPage() {
     <Card className="shadow-xl border border-border">
       <CardHeader className="text-center pb-6 pt-8 px-8">
         <div className="flex justify-center mb-4">
-          <Receipt className="h-10 w-10 text-primary" />
+          <div className="rounded-full bg-[#eff6ff] p-3">
+            <Receipt className="h-8 w-8 text-[#2563eb]" />
+          </div>
         </div>
-        <CardTitle
-          className="text-2xl font-semibold text-foreground"
-          style={{ letterSpacing: "-0.48px" }}
-        >
+        <CardTitle className="text-2xl font-semibold tracking-[-0.48px]">
           Create account
         </CardTitle>
         <CardDescription className="text-sm text-muted-foreground mt-1">
@@ -70,17 +69,12 @@ export default function RegisterPage() {
       <CardContent className="px-8 pb-6">
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div
-              className="rounded-lg p-3 text-sm font-medium"
-              style={{ backgroundColor: "#fee9e7", color: "#900b09" }}
-            >
+            <div className="rounded-lg bg-[#fee9e7] p-3 text-sm font-medium text-[#900b09]">
               {error}
             </div>
           )}
           <div className="space-y-1.5">
-            <Label htmlFor="name" className="text-sm font-medium text-foreground">
-              Full name
-            </Label>
+            <Label htmlFor="name">Full name</Label>
             <Input
               id="name"
               type="text"
@@ -89,13 +83,11 @@ export default function RegisterPage() {
               onChange={(e) => setName(e.target.value)}
               required
               disabled={loading}
-              className="h-10 rounded-lg border-border bg-background px-4 text-base placeholder:text-muted-foreground disabled:text-[#b3b3b3]"
+              className="h-10 rounded-lg"
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="email" className="text-sm font-medium text-foreground">
-              Email
-            </Label>
+            <Label htmlFor="email">Email</Label>
             <Input
               id="email"
               type="email"
@@ -104,13 +96,11 @@ export default function RegisterPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               disabled={loading}
-              className="h-10 rounded-lg border-border bg-background px-4 text-base placeholder:text-muted-foreground disabled:text-[#b3b3b3]"
+              className="h-10 rounded-lg"
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="password" className="text-sm font-medium text-foreground">
-              Password
-            </Label>
+            <Label htmlFor="password">Password</Label>
             <Input
               id="password"
               type="password"
@@ -119,12 +109,12 @@ export default function RegisterPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               disabled={loading}
-              className="h-10 rounded-lg border-border bg-background px-4 text-base placeholder:text-muted-foreground disabled:text-[#b3b3b3]"
+              className="h-10 rounded-lg"
             />
           </div>
           <Button
             type="submit"
-            className="w-full h-10 rounded-lg bg-[#2c2c2c] text-[#f5f5f5] text-sm font-medium hover:bg-[#1e1e1e] px-3 disabled:opacity-50"
+            className="w-full h-10 rounded-lg bg-[#2563eb] text-white hover:bg-[#1d4ed8]"
             disabled={loading}
           >
             {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
@@ -141,7 +131,7 @@ export default function RegisterPage() {
         </div>
         <Button
           variant="outline"
-          className="w-full h-10 rounded-lg border-border text-sm font-medium hover:bg-muted"
+          className="w-full h-10 rounded-lg border-border hover:bg-muted"
           onClick={handleGoogleSignIn}
           disabled={loading}
         >
@@ -157,7 +147,7 @@ export default function RegisterPage() {
       <CardFooter className="justify-center px-8 pb-8">
         <p className="text-sm text-muted-foreground">
           Already have an account?{" "}
-          <Link href="/login" className="text-foreground hover:underline font-medium">
+          <Link href="/login" className="text-[#2563eb] hover:underline font-medium">
             Sign in
           </Link>
         </p>

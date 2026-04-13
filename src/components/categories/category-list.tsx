@@ -15,7 +15,7 @@ export function CategoryList({ categories, onEdit, onDelete }: CategoryListProps
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {categories.map((cat) => (
-        <Card key={cat.id} className="border border-[#d9d9d9]">
+        <Card key={cat.id} className="border border-border">
           <CardContent className="flex items-center justify-between p-4">
             <div className="flex items-center gap-3">
               {cat.color && (

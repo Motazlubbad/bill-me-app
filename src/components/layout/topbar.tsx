@@ -24,10 +24,7 @@ export function Topbar() {
   };
 
   return (
-    <header
-      className="flex h-16 items-center justify-between px-4 md:px-6"
-      style={{ borderBottom: "1px solid #d9d9d9" }}
-    >
+    <header className="flex h-16 items-center justify-between border-b border-border px-4 md:px-6 bg-white">
       <MobileNav />
       <div className="flex-1" />
       <DropdownMenu>
@@ -36,14 +33,7 @@ export function Topbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full transition-colors"
-              style={{ backgroundColor: "transparent" }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#f5f5f5";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
-              }}
+              className="rounded-full hover:bg-[#eff6ff] hover:text-[#2563eb]"
             >
               <CircleUser className="h-5 w-5" />
             </Button>

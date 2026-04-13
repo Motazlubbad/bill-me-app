@@ -24,7 +24,7 @@ export function MonthlyChart({ data, currency = "TRY" }: MonthlyChartProps) {
   }));
 
   return (
-    <Card>
+    <Card className="border border-border">
       <CardHeader>
         <CardTitle>Monthly Spending</CardTitle>
       </CardHeader>
@@ -59,7 +59,7 @@ export function MonthlyChart({ data, currency = "TRY" }: MonthlyChartProps) {
               />
               <Bar
                 dataKey="total"
-                fill="#2c2c2c"
+                fill="#2563eb"
                 radius={[4, 4, 0, 0]}
               />
             </BarChart>

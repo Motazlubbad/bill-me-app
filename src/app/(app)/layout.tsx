@@ -9,7 +9,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         <AppSidebar />
         <div className="flex flex-1 flex-col overflow-hidden">
           <Topbar />
-          <main className="flex-1 overflow-y-auto bg-white p-6 md:p-8">{children}</main>
+          <main className="flex-1 overflow-y-auto bg-[#f8fafc] p-6 md:p-8">{children}</main>
         </div>
       </div>
     </AuthGuard>

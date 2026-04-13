@@ -13,5 +13,5 @@ const sizeMap = {
 };
 
 export function LoadingSpinner({ size = "md", className }: LoadingSpinnerProps) {
-  return <Loader2 className={cn("animate-spin text-[#757575]", sizeMap[size], className)} />;
+  return <Loader2 className={cn("animate-spin text-[#2563eb]", sizeMap[size], className)} />;
 }

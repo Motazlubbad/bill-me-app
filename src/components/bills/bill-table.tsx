@@ -23,7 +23,7 @@ interface BillTableProps {
 
 export function BillTable({ bills, onDelete }: BillTableProps) {
   return (
-    <div className="rounded-lg border border-[#d9d9d9]">
+    <div className="rounded-lg border border-border">
       <Table>
         <TableHeader>
           <TableRow>
