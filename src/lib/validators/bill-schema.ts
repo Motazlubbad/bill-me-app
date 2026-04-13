@@ -8,11 +8,9 @@ export const billSchema = z.object({
   billingMonth: z
     .string()
     .regex(/^\d{4}-(0[1-9]|1[0-2])$/, "Must be YYYY-MM format"),
-  dueDate: z.date({ required_error: "Due date is required" }),
+  dueDate: z.date({ error: "Due date is required" }),
   paidDate: z.date().optional(),
-  status: z.enum(["pending", "paid", "overdue"], {
-    required_error: "Status is required",
-  }),
+  status: z.enum(["pending", "paid", "overdue"]),
   notes: z.string().max(500).optional(),
 });
 
