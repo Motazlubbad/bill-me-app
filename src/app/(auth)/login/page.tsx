@@ -45,23 +45,35 @@ export default function LoginPage() {
   };
 
   return (
-    <Card>
-      <CardHeader className="text-center">
-        <div className="flex justify-center mb-2">
+    <Card className="shadow-xl border border-border">
+      <CardHeader className="text-center pb-6 pt-8 px-8">
+        <div className="flex justify-center mb-4">
           <Receipt className="h-10 w-10 text-primary" />
         </div>
-        <CardTitle className="text-2xl">Welcome back</CardTitle>
-        <CardDescription>Sign in to your BillTracker account</CardDescription>
+        <CardTitle
+          className="text-2xl font-semibold text-foreground"
+          style={{ letterSpacing: "-0.48px" }}
+        >
+          Welcome back
+        </CardTitle>
+        <CardDescription className="text-sm text-muted-foreground mt-1">
+          Sign in to your BillTracker account
+        </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-8 pb-6">
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
+            <div
+              className="rounded-lg p-3 text-sm font-medium"
+              style={{ backgroundColor: "#fee9e7", color: "#900b09" }}
+            >
               {error}
             </div>
           )}
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="email" className="text-sm font-medium text-foreground">
+              Email
+            </Label>
             <Input
               id="email"
               type="email"
@@ -70,10 +82,13 @@ export default function LoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               disabled={loading}
+              className="h-10 rounded-lg border-border bg-background px-4 text-base placeholder:text-muted-foreground disabled:text-[#b3b3b3]"
             />
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="password" className="text-sm font-medium text-foreground">
+              Password
+            </Label>
             <Input
               id="password"
               type="password"
@@ -81,22 +96,32 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               disabled={loading}
+              className="h-10 rounded-lg border-border bg-background px-4 text-base placeholder:text-muted-foreground disabled:text-[#b3b3b3]"
             />
           </div>
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button
+            type="submit"
+            className="w-full h-10 rounded-lg bg-[#2c2c2c] text-[#f5f5f5] text-sm font-medium hover:bg-[#1e1e1e] px-3 disabled:opacity-50"
+            disabled={loading}
+          >
             {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
             Sign in
           </Button>
         </form>
-        <div className="relative my-4">
+        <div className="relative my-5">
           <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t" />
+            <span className="w-full border-t border-border" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
+            <span className="bg-card px-2 text-muted-foreground tracking-wide">Or continue with</span>
           </div>
         </div>
-        <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={loading}>
+        <Button
+          variant="outline"
+          className="w-full h-10 rounded-lg border-border text-sm font-medium hover:bg-muted"
+          onClick={handleGoogleSignIn}
+          disabled={loading}
+        >
           <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
             <path
               d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
@@ -118,10 +143,10 @@ export default function LoginPage() {
           Google
         </Button>
       </CardContent>
-      <CardFooter className="justify-center">
+      <CardFooter className="justify-center px-8 pb-8">
         <p className="text-sm text-muted-foreground">
           Don&apos;t have an account?{" "}
-          <Link href="/register" className="text-primary hover:underline font-medium">
+          <Link href="/register" className="text-foreground hover:underline font-medium">
             Sign up
           </Link>
         </p>
