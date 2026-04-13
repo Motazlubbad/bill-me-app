@@ -23,7 +23,7 @@ interface BillTableProps {
 
 export function BillTable({ bills, onDelete }: BillTableProps) {
   return (
-    <div className="rounded-md border">
+    <div className="rounded-lg border border-[#d9d9d9]">
       <Table>
         <TableHeader>
           <TableRow>
@@ -60,13 +60,13 @@ export function BillTable({ bills, onDelete }: BillTableProps) {
                 </TableCell>
                 <TableCell>
                   <div className="flex items-center justify-end gap-1">
-                    <Button variant="ghost" size="icon" render={<Link href={`/bills/${bill.id}`} />}>
+                    <Button variant="ghost" size="icon" className="rounded-full" render={<Link href={`/bills/${bill.id}`} />}>
                       <Eye className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="icon" render={<Link href={`/bills/${bill.id}/edit`} />}>
+                    <Button variant="ghost" size="icon" className="rounded-full" render={<Link href={`/bills/${bill.id}/edit`} />}>
                       <Pencil className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="icon" onClick={() => onDelete(bill)}>
+                    <Button variant="ghost" size="icon" className="rounded-full" onClick={() => onDelete(bill)}>
                       <Trash2 className="h-4 w-4 text-destructive" />
                     </Button>
                   </div>

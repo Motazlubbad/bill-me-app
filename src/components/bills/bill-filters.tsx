@@ -52,11 +52,11 @@ export function BillFilters({
           placeholder="Search bills..."
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="pl-9"
+          className="pl-9 rounded-full"
         />
       </div>
       <Select value={monthFilter} onValueChange={(val: string | null) => onMonthFilterChange(val ?? "all")}>
-        <SelectTrigger className="w-full sm:w-[160px]">
+        <SelectTrigger className="w-full sm:w-[160px] border-[#d9d9d9]">
           <SelectValue placeholder="All Months" />
         </SelectTrigger>
         <SelectContent>
@@ -69,7 +69,7 @@ export function BillFilters({
         </SelectContent>
       </Select>
       <Select value={categoryFilter} onValueChange={(val: string | null) => onCategoryFilterChange(val ?? "all")}>
-        <SelectTrigger className="w-full sm:w-[160px]">
+        <SelectTrigger className="w-full sm:w-[160px] border-[#d9d9d9]">
           <SelectValue placeholder="All Categories" />
         </SelectTrigger>
         <SelectContent>
@@ -82,7 +82,7 @@ export function BillFilters({
         </SelectContent>
       </Select>
       <Select value={statusFilter} onValueChange={(val: string | null) => onStatusFilterChange(val ?? "all")}>
-        <SelectTrigger className="w-full sm:w-[150px]">
+        <SelectTrigger className="w-full sm:w-[150px] border-[#d9d9d9]">
           <SelectValue placeholder="All Statuses" />
         </SelectTrigger>
         <SelectContent>

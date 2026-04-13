@@ -65,7 +65,7 @@ export default function SettingsPage() {
     <div className="space-y-6">
       <PageHeader title="Settings" description="Manage your account settings" />
 
-      <Card className="max-w-2xl">
+      <Card className="max-w-2xl border border-[#d9d9d9]">
         <CardHeader>
           <CardTitle>Profile</CardTitle>
         </CardHeader>

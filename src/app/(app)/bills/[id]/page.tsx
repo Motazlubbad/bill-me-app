@@ -74,7 +74,7 @@ export default function BillDetailPage({ params }: { params: Promise<{ id: strin
         </Button>
       </PageHeader>
 
-      <Card>
+      <Card className="border border-[#d9d9d9]">
         <CardHeader>
           <CardTitle className="flex items-center gap-3">
             Bill Details
@@ -84,29 +84,29 @@ export default function BillDetailPage({ params }: { params: Promise<{ id: strin
         <CardContent className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <p className="text-sm text-muted-foreground">Amount</p>
+              <p className="text-sm text-[#757575]">Amount</p>
               <p className="text-2xl font-bold">{formatCurrency(bill.amount, bill.currency)}</p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Category</p>
+              <p className="text-sm text-[#757575]">Category</p>
               <p className="text-lg font-medium">{bill.category}</p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Billing Month</p>
+              <p className="text-sm text-[#757575]">Billing Month</p>
               <p className="font-medium">{bill.billingMonth}</p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Due Date</p>
+              <p className="text-sm text-[#757575]">Due Date</p>
               <p className="font-medium">{formatDate(bill.dueDate)}</p>
             </div>
             {bill.paidDate && (
               <div>
-                <p className="text-sm text-muted-foreground">Paid Date</p>
+                <p className="text-sm text-[#757575]">Paid Date</p>
                 <p className="font-medium">{formatDate(bill.paidDate)}</p>
               </div>
             )}
             <div>
-              <p className="text-sm text-muted-foreground">Currency</p>
+              <p className="text-sm text-[#757575]">Currency</p>
               <p className="font-medium">{bill.currency}</p>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function BillDetailPage({ params }: { params: Promise<{ id: strin
             <>
               <Separator />
               <div>
-                <p className="text-sm text-muted-foreground">Notes</p>
+                <p className="text-sm text-[#757575]">Notes</p>
                 <p className="mt-1">{bill.notes}</p>
               </div>
             </>
