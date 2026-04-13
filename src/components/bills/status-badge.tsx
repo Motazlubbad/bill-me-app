@@ -1,11 +1,12 @@
-import { Badge } from "@/components/ui/badge";
 import { type BillStatus } from "@/lib/types/bill";
-import { cn } from "@/lib/utils";
 
-const statusConfig: Record<BillStatus, { label: string; className: string }> = {
-  pending: { label: "Pending", className: "bg-yellow-100 text-yellow-800 hover:bg-yellow-100" },
-  paid: { label: "Paid", className: "bg-green-100 text-green-800 hover:bg-green-100" },
-  overdue: { label: "Overdue", className: "bg-red-100 text-red-800 hover:bg-red-100" },
+const statusConfig: Record<
+  BillStatus,
+  { label: string; bg: string; color: string }
+> = {
+  paid:    { label: "Paid",    bg: "#cff7d3", color: "#02542d" },
+  pending: { label: "Pending", bg: "#fff1c2", color: "#682d03" },
+  overdue: { label: "Overdue", bg: "#fdd3d0", color: "#900b09" },
 };
 
 interface StatusBadgeProps {
@@ -13,10 +14,21 @@ interface StatusBadgeProps {
 }
 
 export function StatusBadge({ status }: StatusBadgeProps) {
-  const config = statusConfig[status];
+  const { label, bg, color } = statusConfig[status];
   return (
-    <Badge variant="secondary" className={cn("font-medium", config.className)}>
-      {config.label}
-    </Badge>
+    <span
+      style={{
+        backgroundColor: bg,
+        color,
+        borderRadius: "8px",
+        padding: "4px 12px",
+        fontSize: "14px",
+        fontWeight: 400,
+        display: "inline-block",
+        lineHeight: "1.4",
+      }}
+    >
+      {label}
+    </span>
   );
 }

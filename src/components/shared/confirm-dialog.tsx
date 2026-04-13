@@ -42,7 +42,12 @@ export function ConfirmDialog({
           <Button variant="outline" onClick={() => onOpenChange(false)} disabled={loading}>
             Cancel
           </Button>
-          <Button variant={variant} onClick={onConfirm} disabled={loading}>
+          <Button
+            variant={variant}
+            onClick={onConfirm}
+            disabled={loading}
+            className={variant === "destructive" ? "bg-[#ec221f] text-[#fee9e7] hover:bg-[#c00f0c]" : ""}
+          >
             {loading ? "Loading..." : confirmLabel}
           </Button>
         </DialogFooter>
