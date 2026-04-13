@@ -28,19 +28,19 @@ export function MobileNav() {
           </Button>
         }
       />
-      <SheetContent side="left" className="w-64 p-0">
+      <SheetContent side="left" className="w-64 p-0 bg-zinc-950 text-white border-zinc-800">
         <SheetTitle className="sr-only">Navigation</SheetTitle>
-        <div className="flex h-16 items-center border-b px-6">
+        <div className="flex h-16 items-center px-6">
           <Link
             href="/dashboard"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2 font-bold text-lg"
+            className="flex items-center gap-2 font-bold text-lg text-white"
           >
-            <Receipt className="h-6 w-6 text-primary" />
+            <Receipt className="h-6 w-6" />
             <span>BillTracker</span>
           </Link>
         </div>
-        <nav className="space-y-1 p-4">
+        <nav className="space-y-1 px-3 pt-2">
           {navItems.map((item) => {
             const isActive = pathname.startsWith(item.href);
             return (
@@ -49,10 +49,10 @@ export function MobileNav() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                   isActive
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    ? "bg-white text-zinc-950"
+                    : "text-zinc-400 hover:bg-zinc-800 hover:text-white"
                 )}
               >
                 <item.icon className="h-4 w-4" />
